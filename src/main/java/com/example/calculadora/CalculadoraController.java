@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class CalculadoraController {
 
-	@GetMapping("/")
+	@GetMapping("/calculadora")
 	public String index(Model modelo)
 	{
 		modelo.addAttribute("calculadora", new Calculadora());
