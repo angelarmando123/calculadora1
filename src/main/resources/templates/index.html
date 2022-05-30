@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" >
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<script type="/js/jquery.unobtrusive-ajax.min.js"></script>
+<title>Calculadora</title>
+</head>
+<body class="bg-dark">
+	<div class="container p-5 bg-info">
+	
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<center>
+					<h1>Ángel Armando Cerón Hernández</h1>
+					<h4>Calculadora de operaciones basicas</h4>
+					<h5>Inroduce todos los campos solicitados*</h5>
+					<br/>
+					<br/>
+					<br/>
+				</center>
+			</div>
+			<div class="col-3"></div>		
+	</div>
+	<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<form action="#" th:action="@{/resultado}" th:object="${calculadora}" method="post">
+				<p>Introduce un número: <input type="text" th:field="*{num1}" class="form-control" required="required" /></p>
+				<p>Introduce otro número: <input type="text" th:field="*{num2}" class="form-control" required="required" /></p>
+				<p>Selecciona la operación: 
+					<select th:field="*{operador}" class="form-control">
+						<option value="+">Suma</option>
+						<option value="-">Resta</option>
+						<option value="*">Multiplicación</option>
+						<option value="/">División</option>
+					</select>
+					<p>
+					<label th:text=" ' Resultado de: ' + *{num1} + *{operador} + *{num2} + ' = ' + *{resultado} "> </label>
+					<p><input type="submit" value="Realizar Operación"/> <input type="reset" value="limpiar"/></p>
+				</form>
+			</div>
+			<div class="col-3"></div>		
+	</div>
+	
+	</div>
+</body>
+</html>
